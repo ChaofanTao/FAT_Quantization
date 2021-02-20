@@ -142,8 +142,6 @@ Results of ImageNet dataset
 |4 bit / 4 bit |  70.5 | 74.1 |69.2 |
 |3 bit / 3 bit | 69.0  | 73.2 |62.8 |
 
-The performance may has small variation (+- 0.2) in different times of experiments due to different random seeds.
-
 
 ## License
 FAT_Quantization is released under MIT License.
