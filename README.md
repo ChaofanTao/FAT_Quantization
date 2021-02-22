@@ -20,13 +20,15 @@ If you use FAT_Quantization in your research, please kindly cite this work by
 ```
 
 ## Installation
-This code is trained on PyTorch 1.7.  If you are using old version of PyTorch, you may first do train part and then evaluation part.
+This code is tested on both PyTorch 1.3 (cuda 10.2) and PyTorch 1.7(cuda 11.0).
 ```
 git clone https://github.com/ChaofanTao/FAT_Quantization.git
 cd FAT_Quantization
 # conda 安装
 conda install pytorch torchvision  -c pytorch
 # pip 安装
+pip install torch torchvision
+OR
 pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pytorch.org/whl/torch_stable.html
 ```
 ## Training and Evaluation
@@ -35,7 +37,7 @@ If making evaluation of a 4-bit resnet_20 on CIFAR-10 dataset, you can simply us
 cd cifar10
 python main.py --arch resnet_20 --test_only --bit 4 --gpu 0 
 ```
-The evaluation output  is  in ```test_dir/resnet_20_4bit/```.
+The evaluation output  is  in ```test_dir/resnet_20_4bit/```. If you are using old version of PyTorch, you may first do train part and then evaluation part.
 
 You can use ```--arch``` to switch network architectures (resnet_56, vgg_7_bn) and use ```--bit``` for different bits. Similarly, you can train on different network architectures and bits. If you want to train a 5-bit resnet_20,
 ```
