@@ -37,7 +37,7 @@ OR
 pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pytorch.org/whl/torch_stable.html
 ```
 ## Training and Evaluation
-If making evaluation of a 4-bit resnet_20 on CIFAR-10 dataset, you can download the checkpoints in [test_dir](https://drive.google.com/drive/folders/1r_BkgZGCEBL1K9CHDvm8XXsntZjvGQFZ?usp=sharing), and put it in ```cifar10/test_dir```. Then simply use:
+If making evaluation of a 4-bit resnet_20 on CIFAR-10 dataset, you can download the checkpoints in [test_dir](https://drive.google.com/drive/folders/1mnE_6V9xLt4FyKgQftmIARth6qi_JdR9?usp=sharing), and put it in ```cifar10/test_dir```. Then simply use:
 ```
 python main.py --arch resnet_20 --test_only --bit 4 --gpu 0 
 ```
