@@ -43,7 +43,7 @@ python main.py --arch resnet_20 --test_only --bit 4 --gpu 0
 ```
 The evaluation output  is  in ```test_dir/resnet_20_4bit/```. If you are using old version of PyTorch, you may first do train part and then evaluation part.
 
-You can use ```--arch``` to switch network architectures (```--arch resnet_56```, ```--arch vgg_7_bn```) and use ```--bit``` for different bits. Similarly, you can train on different network architectures and bits. If you want to train a 5-bit resnet_20,
+You can use ```--arch``` to switch network architectures (```--arch resnet_56```, ```--arch vgg_7_bn```) and use ```--bit``` for different bits. Similarly, you can train on different network architectures and bits. For example, if you want to train a 5-bit resnet_20,
 ```
 sh train_resnet.sh
 ```
