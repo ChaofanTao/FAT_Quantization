@@ -1,7 +1,7 @@
 ## FAT: Learning Low-Bitwidth Parametric Representation via Frequency-Aware Transformation
 
 ## Paper
-[Learning Low-Bitwidth Parametric Representation via Frequency-Aware Transformation](https://arxiv.org/abs/2102.07444v1.pdf)
+[Learning Low-Bitwidth Parametric Representation via Frequency-Aware Transformation](https://arxiv.org/abs/2102.07444)
 <center class="half">
     <img src="./files/framework3.png" width="500"/>
 </center>
@@ -16,7 +16,12 @@
 ## Citation
 If you use FAT_Quantization in your research, please kindly cite this work by
 ```BibTeX
-
+@article{tao2021fat,
+  title={FAT: Learning Low-Bitwidth Parametric Representation via Frequency-Aware Transformation},
+  author={Tao, Chaofan and Lin, Rui and Chen, Quan and Zhang, Zhaoyang and Luo, Ping and Wong, Ngai},
+  journal={arXiv preprint arXiv:2102.07444},
+  year={2021}
+}
 ```
 
 ## Installation
@@ -128,7 +133,7 @@ output = conv(activation_q, weight_q)
 ```
 
 
-## Accuracy on uniform quantizer
+## Accuracy on Uniform Quantizer
  Results of CIFAR-10 dataset
 
 | Weight/Activation  |  ResNet-20   | ResNet-56  | VGG-Small |
@@ -138,11 +143,29 @@ output = conv(activation_q, weight_q)
 
 Results of ImageNet dataset
 
-|Weight/Activation  |  ResNet-20   | ResNet-34  | MobileNetV2 |
+|Weight/Activation  |  ResNet-18   | ResNet-34  | MobileNetV2 |
 |  ----  | ----  |  ----  |  ----  |
 |5 bit / 5 bit |  70.8 | 74.6 |69.6 |
 |4 bit / 4 bit |  70.5 | 74.1 |69.2 |
 |3 bit / 3 bit | 69.0  | 73.2 |62.8 |
+
+
+## Accuracy on Logarithmic Quantizer
+ Results of CIFAR-10 dataset
+
+| Weight/Activation  |  ResNet-20   | ResNet-56  | VGG-Small |
+|  ----  | ----  |  ----  |  ----  |
+| 4 bit / 4 bit |  92.0 | 93.8 |93.8 |
+| 3 bit / 3 bit | 92.2  | 93.7 |93.7 |
+| 2 bit / 2 bit | 91.1  | 93.3 |93.3 |
+
+Results of ImageNet dataset
+
+|Weight/Activation  |  ResNet-18   | ResNet-34  |
+|  ----  | ----  |  ----  |
+|4 bit / 4 bit |  68.8 | 73.3 |
+|3 bit / 3 bit | 68.7  | 73.2 |
+|2 bit / 2 bit | 64.3  | 70.1 |
 
 
 ## License
