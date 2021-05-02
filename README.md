@@ -40,17 +40,14 @@ pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pyto
 If making evaluation of a 4-bit resnet_20 on CIFAR-10 dataset, you can download the checkpoints in [test_dir](https://drive.google.com/drive/folders/1mnE_6V9xLt4FyKgQftmIARth6qi_JdR9?usp=sharing), and locate it as ```cifar10/test_dir```. Then simply use:
 ```
 cd cifar10
-python main.py --arch resnet_20 --test_only --bit 4 --gpu 0 
+python main.py --arch resnet_20 --test_only --bit 5 --gpu 0   # eval
+python main.py --arch resnet_20  --bit 5 --gpu 0   # train
 ```
-The evaluation output  is  in ```test_dir/resnet_20_4bit/```. If you are using old version of PyTorch, you may first do train part and then evaluation part.
+The evaluation output  is  in ```test_dir/resnet_20_5bit/```. If you are using old version of PyTorch, you may first do train part and then evaluation part.
 
-You can use ```--arch``` to switch network architectures (```--arch resnet_56```, ```--arch vgg_7_bn```) and use ```--bit``` for different bits. Similarly, you can train on different network architectures and bits. For example, if you want to train a 5-bit resnet_20,
+You can use ```--arch``` to switch network architectures (```--arch resnet_56```, ```--arch vgg_7_bn```) and use ```--bit``` for different bits (e.g. 2~5 bits). Similarly, you can train on different network architectures and bits. Or you can simply run this to train quantized resnet.
 ```
 sh train_resnet.sh
-```
-or
-```
-python main.py --arch resnet_20  --bit 5 --gpu 0
 ```
 You can use argument ```--use_pretrain```  to decide whether training from scratch. For example, if using ```--use_pretrain``` to train a 4-bit model, it will start training from 5-bit pretrained checkpoint.
 
