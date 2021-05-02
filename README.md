@@ -39,6 +39,7 @@ pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pyto
 ## Training and Evaluation
 If making evaluation of a 4-bit resnet_20 on CIFAR-10 dataset, you can download the checkpoints in [test_dir](https://drive.google.com/drive/folders/1mnE_6V9xLt4FyKgQftmIARth6qi_JdR9?usp=sharing), and locate it as ```cifar10/test_dir```. Then simply use:
 ```
+cd cifar10
 python main.py --arch resnet_20 --test_only --bit 4 --gpu 0 
 ```
 The evaluation output  is  in ```test_dir/resnet_20_4bit/```. If you are using old version of PyTorch, you may first do train part and then evaluation part.
